@@ -1,17 +1,18 @@
 import dash
+from random import randint
 from dash import html
 from dash import dcc
 import plotly.express as px
 import pandas as pd
-from sklearn import datasets
-# worker: python app.py
+
 #Create Data
-housing_dict = datasets.fetch_california_housing()
-data = pd.DataFrame(housing_dict['data'])
-data.columns = housing_dict['feature_names']
+x = [randint(1,1000) for i in range(10000)]
+y = [randint(1,1000) for i in range(10000)]
+data = pd.DataFrame([x,y]).T
+data.columns = ['x','y']
 
 #Create a plotly graph to be used by dcc.Graph()
-fig = px.scatter(data,x='AveRooms',y='AveBedrms',title='Relation b/w Rooms & Bedrooms')
+fig = px.scatter(data,x='x',y='y',title='Relation b/w Rooms & Bedrooms')
 app = dash.Dash(__name__)
 app.title = "House Data Analysis"
 server = app.server

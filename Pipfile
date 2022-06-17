@@ -9,6 +9,7 @@ sklearn = "*"
 dash = "*"
 plotly = "*"
 gunicorn = "*"
+random2 = "*"
 
 [dev-packages]
 
