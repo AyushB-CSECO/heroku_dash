@@ -4,7 +4,7 @@ from dash import dcc
 import plotly.express as px
 import pandas as pd
 from sklearn import datasets
-
+# worker: python app.py
 #Create Data
 housing_dict = datasets.fetch_california_housing()
 data = pd.DataFrame(housing_dict['data'])
