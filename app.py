@@ -14,6 +14,7 @@ data.columns = housing_dict['feature_names']
 fig = px.scatter(data,x='AveRooms',y='AveBedrms',title='Relation b/w Rooms & Bedrooms')
 app = dash.Dash(__name__)
 app.title = "House Data Analysis"
+server = app.server
 
 app.layout = html.Div(
          id="app-container"
